@@ -1,18 +1,7 @@
-import type { FunctionComponent, FC } from "react"
 
-export const RandomFox = () => { 
-  return <img />
-}
 
-export const RandomFox1 = ():JSX.Element => { 
-  return <img />
-}
-
-export const RandomFox2: FunctionComponent = () => { 
-  return <img />
-}
-
-export const RandomFox3: FC = () => {
-  return <img />
+export const RandomFox = (props: {image:string} ):JSX.Element => { 
+  //const image:string = 
+  return <img width={320} height="auto" className="rounded" src={props.image}/>
 }
 
