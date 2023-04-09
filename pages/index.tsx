@@ -1,14 +1,16 @@
 import { MouseEventHandler, useState } from "react";
-import { LazyImage } from "@/components/LazyImage";
+import { LazyImage } from "../components/LazyImage";
+import { random } from "lodash"
 
 export default function Home() {
-
-  const random = () => Math.floor(Math.random() * 123) +1;
+  
+  const myRandom = () => random(1, 123);
+  //const myRandom = () => Math.floor(Math.random() * 123) +1;
   
   const [images, setImages] = useState<string[]>([]);
 
   const handleFox: MouseEventHandler<HTMLButtonElement> = (e) => {
-    const newFox = `https://randomFox.ca/images/${random()}.jpg`
+    const newFox = `https://randomFox.ca/images/${myRandom()}.jpg`
     setImages([...images, newFox])
   }
   return (
